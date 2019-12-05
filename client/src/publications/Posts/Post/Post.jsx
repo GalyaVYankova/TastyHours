@@ -1,16 +1,10 @@
 import React from 'react';
 import './Post.css';
 
-function Post({ imageUrl, imageAlt, children, author }) {
+function Post({ imageUrl, imageAlt, children }) {
   return <div className="Post">
-    <img src={imageUrl} alt={imageAlt} />
     <p className="description">{children}</p>
-    <div>
-      <span>
-        <small>Author:</small>
-        {author}
-      </span>
-    </div>
+    <p>Да се отварят правилно Detailed View-тата</p>
   </div>;
 };
 

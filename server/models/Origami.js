@@ -9,6 +9,10 @@ const origamiSchema = new Schema({
         type: String,
         required: true,
     },
+    dateCreated: {
+        type: mongoose.Schema.Types.Date,
+        default: Date.now
+      },
 
     author: {
         type: ObjectId,

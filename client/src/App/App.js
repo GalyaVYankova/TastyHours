@@ -39,6 +39,7 @@ class App extends React.Component {
     const cookies = parseCookeis();
     const isLogged = !!cookies['x-auth-token'];
     this.state = { isLogged };
+    this.username = undefined;
   }
 
   logout = (history) => {
@@ -51,24 +52,25 @@ class App extends React.Component {
 
   login = (history, data) => {
     var that = this;
-    console.log(that.cookies);
+    //console.log(that.cookies);
     userService.login(data).then((res) => {
       let cookies = parseCookeis();
       let isLogged = !!cookies['x-auth-token'];
       if (isLogged) {
+        that.username = data.username;
         this.setState({ isLogged: true });
         history.push('/');
       } else {
         alert ('No such user or password!')
         // did not login due to wrong user and/or password or another reason
-        console.log(res);
+        // console.log(res);
       }
     });
   }
 
   render() {
     const { isLogged } = this.state;
-
+   // const { username } = this.username;
     return (
       <BrowserRouter>
         <div className="App">
@@ -81,16 +83,14 @@ class App extends React.Component {
               <Route path="/posts" render={render('Posts', Posts, { isLogged })} />
               <Route path="/post/:id" render={render('Posts', Detail, { isLogged })} />
               <Route path="/logout" render={render('Logout', Logout, { isLogged, logout: this.logout })} />
-              <Route path="/create-posts">
-                <Main title="Create Post"><CreatePost /></Main>
-              </Route>
-              <Route path="/profile">
-                <Main title="Profile">
+              <Route path="/create-posts" render={render('CreatePost', CreatePost, { isLogged })} />
+              {isLogged && <Route path="/profile">
+                <Main title="test">
                   <React.Suspense fallback={<Loader isLoading={true} />}>
                     <Profile></Profile>
                   </React.Suspense>
                 </Main>
-              </Route>
+              </Route>}
               <Route path="/login" render={render('Login', Login, { isLogged, login: this.login })} />
               <Route path="/register" render={render('Register', Register, { isLogged })} />
               <Route path="*">

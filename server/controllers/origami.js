@@ -4,14 +4,26 @@ module.exports = {
   get: (req, res, next) => {
     const limit = +req.query.limit;
     if (limit) {
-      models.Origami.find().populate('author').sort({ _id: -1 }).limit(3)
+      models.Origami.find().populate('author')
+        .sort({dateCreated: -1}).limit(limit)
         .then((origamies) => res.send(origamies))
         .catch(next);
       return;
     }
     models.Origami.find().populate('author')
+      .sort({dateCreated: -1}).limit(limit)
       .then((origamies) => res.send(origamies))
       .catch(next);
+  },
+
+  details: (req, res, next) => {
+    const {_id} = req.params.id;
+   // const user = req.user;
+   if (id) {
+    models.Origami.findById(id).populate('author')
+      .then((origamies) => res.send(origamies))
+      .catch(next)
+   }
   },
 
   post: (req, res, next) => {

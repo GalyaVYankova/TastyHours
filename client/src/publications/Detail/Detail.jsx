@@ -16,6 +16,17 @@ export default class Detail extends React.Component {
 
   render() {
     const { post } = this.state;
-    return post && <Post description={post.description} author={post.author.username} />
+    return <div>
+    {post ?
+      <div className="Posts">
+        {post.map((post) =>
+        <Post key={post.id}>
+          <p>{post._id}</p>
+          
+          <p>{post.description}</p>
+          <p>Author:<span> {post.author.username}</span></p></Post>)}
+      </div> : <div>Loading...</div>
+    }
+  </div>
   }
 }

@@ -2,13 +2,13 @@ import React from 'react';
 import Posts from '../publications/Posts/Posts';
 import './Profile.css';
 
-export default function Profile() {
+ const Profile = () => {
   return <div className="Profile">
     <img src="" alt="profle" />
     <div className="personal-info">
       <p>
-        <span>Email:</span>
-        myemail@abv.bg
+        <span>User-ът да вижда само неговите постове</span>
+        <div>myemail@abv.bg</div>
       </p>
       <p>
         <span>Posts:</span>
@@ -18,3 +18,5 @@ export default function Profile() {
     <Posts limit={3} />
   </div>;
 }
+
+export default Profile

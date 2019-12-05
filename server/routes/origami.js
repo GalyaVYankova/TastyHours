@@ -3,6 +3,7 @@ const router = require('express').Router();
 const { auth } = require('../utils');
 
 router.get('/', controllers.origami.get);
+router.get('/:id', auth(), controllers.origami.details);
 
 router.post('/', auth(), controllers.origami.post);
 

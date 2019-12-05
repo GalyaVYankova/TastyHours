@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import './Posts.css';
 import Post from './Post/Post';
 import postService from '../../services/post-service';
 
+
+
 class Posts extends React.Component {
+
   state = {
     posts: null
   };
@@ -14,6 +16,7 @@ class Posts extends React.Component {
   componentDidMount() {
     postService.load(null, this.props.limit).then(posts => {
       this.setState({ posts });
+      
     });
   }
 
@@ -23,12 +26,16 @@ class Posts extends React.Component {
 
   render() {
     const { posts } = this.state;
-
+    
     return <div>
-      {posts ?
+      {posts ? 
         <div className="Posts">
           {posts.map((post) =>
-            <Post key={post.id} imageUrl="/logo192.png" imageAlt="alt">{post.description}</Post>)}
+          <Post key={post.id}>
+            <img src={post.description} alt="test" />
+            <p>{post.description}</p>
+            <a href="/post/{post.id}">{post._id}</a>
+            <p>Author:<span> {post.author.username}</span></p></Post>)}
         </div> : <div>Loading...</div>
       }
     </div>
