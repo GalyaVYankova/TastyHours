@@ -53,13 +53,13 @@ class App extends React.Component {
   }
 
   login = (history, data) => {
-    var that = this;
+    //var that = this;
     //console.log(that.cookies);
     userService.login(data).then((res) => {
       let cookies = parseCookeis();
       let isLogged = !!cookies['x-auth-token'];
       if (isLogged) {
-        that.username = data.username;
+        this.username = data.username;
         this.setState({ isLogged: true });
         history.push('/');
       } else {
@@ -92,10 +92,11 @@ class App extends React.Component {
                     <Profile></Profile>
                   </React.Suspense>
               </Route>}
+            </Switch>
+          </div>
+          <div className="auth">
               <Route path="/login" render={render('Login', Login, { isLogged, login: this.login })} />
               <Route path="/register" render={render('Register', Register, { isLogged })} />
-              
-            </Switch>
           </div>
           <Footer isLogged={isLogged} />
         </div>

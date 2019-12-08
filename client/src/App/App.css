@@ -1,3 +1,9 @@
-.Container {
+.App {
     background: url('../pattern-3371709_1920.jpg') repeat center;
+}
+
+.auth{
+    background: url('../41185724-cookies-background.jpg') repeat center;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }

@@ -1,0 +1,33 @@
+.Register{
+    width: 43%;
+    margin: auto; 
+    margin-top: 110px;
+    margin-bottom: 200px;
+    border: 2px solid red;
+    background: white;
+    text-align: center;
+    border-radius: 20px;
+    border: 5px groove #7A2030;
+}
+
+.Register > div > p > input {
+    width: 80%;
+}
+
+.Register > div > p > label {
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+
+.Register > div > p {
+    margin-bottom: 5px;
+}
+
+.Register > div > button {
+    margin: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: #f1a445;
+    color: #2094a7;;
+    font-weight: bold;
+}

@@ -1,12 +1,10 @@
 .Footer {
-  background-color: #ffa000;
-  color: #234465;
+  background-image: linear-gradient(to right bottom, #c24d90, #d25984, #dc6a7a, #e17b74, #e28e73, #e89b71, #eca970, #eeb770, #f3c668, #f2d761, #ece85e, #e0fb5f)!important;
+  
   border-top: 2px solid #234465;
   border-bottom: 2px solid #234465;
-  margin-bottom: 1%;
 }
-  
-.Footer p {
-  text-align: center;
-  font-weight: bold;;
+
+.Footer > nav .listItem a {
+  color: #2094a7!important;
 }

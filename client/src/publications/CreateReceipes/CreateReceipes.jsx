@@ -13,7 +13,10 @@ const CreateRecipes = ({ isLogged, history }) => {
             image: imageRef.current.value,
             description: descriptionRef.current.value
         })
-            .then(() => { history.push('/'); });
+            .then(() => {
+                history.push('/');
+                history.push('/recipes');
+            });
     }, [titleRef, imageRef, descriptionRef, history]);
 
     return <div className="recipes">

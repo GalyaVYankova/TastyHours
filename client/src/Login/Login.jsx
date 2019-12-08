@@ -1,9 +1,10 @@
-import React from 'react';
-import '../shared/styles/LoginAndRegister.css';
-
+import React, { Fragment } from 'react';
 import withForm from '../shared/hocs/withForm';
 import userService from '../services/user-service';
 import * as yup from 'yup';
+import './Login.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Card, Navbar, Button } from 'react-bootstrap';
 
 
 class Login extends React.Component {
@@ -31,18 +32,26 @@ class Login extends React.Component {
     const passwordError = this.getFirstControlError('password');
 
     return <form className="Login">
-      <div className="form-control">
-        <label>Username</label>
+      <div>
+        <p>
+        <label>Потребителското име</label>
+        </p>
+        <p>
         <input type="text" onChange={this.usernameChangeHandler}/>
         {usernameError && <div className="error">{usernameError}</div>}
+        </p>
       </div>
-      <div className="form-control">
-        <label>Password</label>
+      <div>
+        <p>
+        <label>Парола</label>
+        </p>
+        <p>
         <input type="password" onChange={this.passwordChangeHandler} />
         {passwordError && <div className="error">{passwordError}</div>}
+        </p>
       </div>
-      <div className="form-control">
-        <button type="button" onClick={this.submitHandler}>Login</button>
+      <div>
+        <button type="button" onClick={this.submitHandler}>Вход</button>
       </div>
     </form>;
   }
@@ -55,13 +64,13 @@ const initialFormState = {
 };
 
 const schema = yup.object({
-  username: yup.string('Username shoud be a string')
-    .required('Username is required')
-    .min(4, 'Username should be more than 4 chars'),
+  username: yup.string('Потребителското име трябва да е символи')
+    .required('Потребителското име е задължително')
+    .min(4, 'Потребителското име трябва да е по-дълго от 4 символа'),
 
-  password: yup.string('Password must be a string')
-    .required('Password is required')
-    .min(6, 'Password must be more than 6 chars'),
+  password: yup.string('Паролата трябва да е символи')
+    .required('Паролата е задължителна')
+    .min(6, 'Паролата трябва да е по-дълга от 6 символа'),
 });
 
 export default withForm(Login, initialFormState, schema)

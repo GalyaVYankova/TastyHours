@@ -1,5 +1,6 @@
 /*eslint-disable no-undef */
 import React from 'react';
+import { Router, Route, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import './Gallery.css';
 import Picture from './Gallery/Picture';
@@ -18,9 +19,8 @@ const myWidget = cloudinary.createUploadWidget({
     pictureService.create({ url: result.info.url }).then((res) => {
       console.log(res);
     });
-    
   }
-})
+});
 
 class Gallery extends React.Component {
 
@@ -37,10 +37,17 @@ class Gallery extends React.Component {
 
   render() {
     const { pictures } = this.state;
+    const that = this;
+    const refreshGallery = function () {
+      pictureService.load().then(pictures => {
+        that.setState({ pictures });
+      });
+    };
 
     return <div className="createPicture">
       <button id="upload_widget" className="cloudinary-button" onClick={() =>
         myWidget.open()}>Upload files</button>
+      <button className="cloudinary-button" onClick={refreshGallery}>Refresh Gallery</button>
       {pictures ?
         <div className="Pictures">
           {pictures.map((picture) =>
@@ -49,8 +56,8 @@ class Gallery extends React.Component {
               <p>Author:<span> {picture.author.username}</span></p></Picture>)}
         </div> : <div>Loading...</div>
       }
-      
-      
+
+
     </div>
 
 

@@ -4,3 +4,14 @@
   text-align: center;
   justify-content: space-evenly;
 }
+
+.Posts > .card{
+  height: 520px;
+}
+
+.post-title > h5 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-style: italic;
+  font-weight: bold;
+}
