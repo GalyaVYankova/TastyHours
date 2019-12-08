@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 import './Posts.css';
 import Post from './Post/Post';
 import postService from '../../services/post-service';
-
-
+import { Button, Col, Image, Row, Card, Form, Carousel } from 'react-bootstrap';
 
 class Posts extends React.Component {
 
@@ -14,9 +13,11 @@ class Posts extends React.Component {
   textInput = null;
 
   componentDidMount() {
+    // pictureService.load().then(pictures => {
+    //   console.log(pictures);
+    // });
     postService.load(null, this.props.limit).then(posts => {
       this.setState({ posts });
-      
     });
   }
 
@@ -26,16 +27,16 @@ class Posts extends React.Component {
 
   render() {
     const { posts } = this.state;
-    
+
     return <div>
-      {posts ? 
+      {posts ?
         <div className="Posts">
           {posts.map((post) =>
-          <Post key={post.id}>
-            <img src={post.description} alt="test" />
-            <p>{post.description}</p>
-            <a href="/post/{post.id}">{post._id}</a>
-            <p>Author:<span> {post.author.username}</span></p></Post>)}
+            <Post key={post.id}>
+              <img src={post.description} alt="test" />
+              <p className="post-p">{post.description}</p>
+              <a href={'/post/' + post._id}>{post._id}</a>
+              <p>Author:<span> {post.author.username}</span></p></Post>)}
         </div> : <div>Loading...</div>
       }
     </div>

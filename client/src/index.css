@@ -1,6 +1,27 @@
-@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+<link href="https://fonts.googleapis.com/css?family=Noto+Sans:400,700|Roboto:400,700,900&display=swap&subset=cyrillic" rel="stylesheet">
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Indie- Flower', cursive;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 28px;
+    line-height: 1.5;
+}
+
+.pink{
+    background-image: linear-gradient(to right bottom, #c24d90, #d25984, #dc6a7a, #e17b74, #e28e73, #e89b71, #eca970, #eeb770, #f3c668, #f2d761, #ece85e, #e0fb5f)!important;
+}
+
+.navigation-right{
+    display: flex;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #2094a7;
+    font-weight: 700;
 }

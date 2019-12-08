@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import Posts from '../publications/Posts/Posts';
 import './Profile.css';
 
- const Profile = () => {
+const Profile = () => {
+  
   return <div className="Profile">
-    <img src="" alt="profle" />
     <div className="personal-info">
       <p>
         <span>User-ът да вижда само неговите постове</span>

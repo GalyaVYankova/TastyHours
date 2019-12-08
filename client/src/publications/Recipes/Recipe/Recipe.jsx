@@ -1,9 +1,9 @@
 import React from 'react';
-import './Post.css';
+import './Recipe.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card, Navbar, Button } from 'react-bootstrap';
 
-function Post({ imageUrl, imageAlt, children }) {
+function Recipe({ imageUrl, imageAlt, children }) {
 
   return <div>
     <Card>
@@ -18,4 +18,4 @@ function Post({ imageUrl, imageAlt, children }) {
   </div>;
 };
 
-export default Post;
+export default Recipe;

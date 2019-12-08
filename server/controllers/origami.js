@@ -4,13 +4,13 @@ module.exports = {
   get: (req, res, next) => {
     const limit = +req.query.limit;
     if (limit) {
-      models.Origami.find().populate('author')
+      models.Origami.find({ }).populate('author')
         .sort({dateCreated: -1}).limit(limit)
         .then((origamies) => res.send(origamies))
         .catch(next);
       return;
     }
-    models.Origami.find().populate('author')
+    models.Origami.find({ }).populate('author')
       .sort({dateCreated: -1}).limit(limit)
       .then((origamies) => res.send(origamies))
       .catch(next);

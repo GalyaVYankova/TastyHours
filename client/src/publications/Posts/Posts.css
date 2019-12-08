@@ -1,6 +1,6 @@
-
 .Posts {
-  width: 100%;
-  /* border:1px solid red; */
-  height: 45vh;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  justify-content: space-evenly;
 }

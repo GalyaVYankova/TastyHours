@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
 import Navigation from '../Navigation/Navigation';
-import Main from './Main/Main';
 import Aside from '../Aside/Aside';
 import Posts from '../publications/Posts/Posts';
 import Logout from '../Logout/Logout';
 import Detail from '../publications/Detail/Detail';
 import CreatePost from '../publications/CreatePost/CreatePost';
+import CreateReceipes from '../publications/CreateReceipes/CreateReceipes';
 import Footer from '../Footer/Footer';
 import Loader from './Loader/Loader';
 // import Profile from '../Profile/Profile';
@@ -15,12 +15,14 @@ import NotFound from '../NotFound/NotFound';
 import Register from '../Register/Register';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import userService from '../services/user-service';
+import Home from '../publications/Gallery/Gallery';
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Profile = React.lazy(() => import('../Profile/Profile'));
 
 function render(title, Cmp, otherProps) {
   return function (props) {
-    return <Main title={title} ><Cmp {...props} {...otherProps} /></Main>
+    return <Cmp {...props} {...otherProps} />
   };
 }
 
@@ -77,25 +79,22 @@ class App extends React.Component {
           <Loader local={true} isLoading={false} />
           <Navigation isLogged={isLogged} />
           <div className="Container">
-            <Aside isLogged={isLogged} />
             <Switch>
               <Route path="/" exact><Redirect to="/posts" /></Route>
               <Route path="/posts" render={render('Posts', Posts, { isLogged })} />
-              <Route path="/post/:id" render={render('Posts', Detail, { isLogged })} />
+              <Route path="/gallery" render={render('Home', Home, { isLogged })} />
+              <Route path="/post/:id" render={render('Post', Detail, { isLogged })} />
               <Route path="/logout" render={render('Logout', Logout, { isLogged, logout: this.logout })} />
-              <Route path="/create-posts" render={render('CreatePost', CreatePost, { isLogged })} />
+              <Route path="/create-recipes" render={render('CreatePost', CreatePost, { isLogged })} />
+              <Route path="/create-posts" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
               {isLogged && <Route path="/profile">
-                <Main title="test">
                   <React.Suspense fallback={<Loader isLoading={true} />}>
                     <Profile></Profile>
                   </React.Suspense>
-                </Main>
               </Route>}
               <Route path="/login" render={render('Login', Login, { isLogged, login: this.login })} />
               <Route path="/register" render={render('Register', Register, { isLogged })} />
-              <Route path="*">
-                <Main title="Not Found"><NotFound /></Main>
-              </Route>
+              
             </Switch>
           </div>
           <Footer isLogged={isLogged} />

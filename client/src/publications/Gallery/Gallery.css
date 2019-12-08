@@ -1,0 +1,21 @@
+#upload_widget {
+    width: 200px;
+}
+
+.createPicture{
+    text-align: center!important;
+}
+
+.Pictures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.picture-image > .card{
+    height: 300px;
+}
+
+.picture-text > img{
+    margin-top: 20px;
+}
