@@ -1,6 +1,6 @@
 .Register{
     width: 43%;
-    margin: auto; 
+    margin-left: 200px; 
     margin-top: 110px;
     margin-bottom: 200px;
     border: 2px solid red;
@@ -28,6 +28,6 @@
     padding: 5px 10px;
     border-radius: 5px;
     background: #f1a445;
-    color: #2094a7;;
+    color: #007bff;;
     font-weight: bold;
 }

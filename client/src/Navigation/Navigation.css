@@ -1,12 +1,12 @@
 nav > a.navbar-brand > p {
   margin-bottom: 0;
   line-height: 1.2;
-  color: #2094a7;
+  color: #0043ff;
   font-weight: 700;
 }
 
 .navbar-dark .navbar-nav .nav-link {
-  color: #2094a7!important;
+  color: #0043ff!important;
   font-weight: 700;
 }
 

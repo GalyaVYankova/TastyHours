@@ -3,10 +3,10 @@ import './Post.css';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Card, Navbar, Button } from 'react-bootstrap';
 
-function Post({ imageUrl, imageAlt, children }) {
+function DetailCard({ imageUrl, imageAlt, children }) {
 
-  return <div className="Posts">
-    <Card className="post-card">
+  return <div className="Details">
+    <Card className="detailed-card">
       <Card.Body>
         <Card.Text className="post-title">{children}</Card.Text>
       </Card.Body>
@@ -14,4 +14,4 @@ function Post({ imageUrl, imageAlt, children }) {
   </div>;
 };
 
-export default Post;
+export default DetailCard;

@@ -1,6 +1,7 @@
 import React from 'react';
-import Post from '../Posts/Post/Post';
+import DetailCard from '../Posts/Post/DetailCard';
 import service from '../../services/post-service';
+import './Detail.css'
 
 export default class Detail extends React.Component {
   state = {
@@ -18,15 +19,15 @@ export default class Detail extends React.Component {
     const { post } = this.state;
     return <div>
       {post ?
-        <div className="Posts">
-          <Post key={post.id}>
-            <p>{post.title}</p>
+        <div className="posts-detailed">
+          <DetailCard key={post.id} className="detailed-posts">
+            <h5>{post.title}</h5>
             <img src={post.image} alt="{post.title}" />
-            <p>{post.description}</p>
-            <p>Author:<span> {post.author.username}</span></p></Post>
-      </div> : <div>Article not found.</div>
+            <p className="detailed-p">{post.description}</p>
+            <a href="/posts">Обратно</a>
+          </DetailCard>
+        </div> : <div>Статията не беше намерена<a href="/posts">Обратно</a></div>
       }
-      <a href="/posts">Обратно</a>
     </div>
   }
 }

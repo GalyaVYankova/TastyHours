@@ -36,7 +36,8 @@ class Posts extends React.Component {
               <h5>{post.title}</h5>
               <img src={post.image} alt="post.title"/>
               <p className="post-p">{post.description}</p>
-              <a href={'/post/' + post._id}>{post._id}</a></Post>)}
+              <div className="post-link">
+              <a href={'/post/' + post._id}>Продължава...</a></div></Post>)}
         </div> : <div>Loading...</div>
       }
     </div>
