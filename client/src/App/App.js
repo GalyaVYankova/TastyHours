@@ -85,8 +85,8 @@ class App extends React.Component {
               <Route path="/gallery" render={render('Home', Home, { isLogged })} />
               <Route path="/post/:id" render={render('Post', Detail, { isLogged })} />
               <Route path="/logout" render={render('Logout', Logout, { isLogged, logout: this.logout })} />
-              <Route path="/create-recipes" render={render('CreatePost', CreatePost, { isLogged })} />
-              <Route path="/create-posts" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
+              <Route path="/recipes" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
+              <Route path="/create-posts" render={render('CreatePosts', CreatePost, { isLogged })} />
               {isLogged && <Route path="/profile">
                   <React.Suspense fallback={<Loader isLoading={true} />}>
                     <Profile></Profile>

@@ -3,12 +3,12 @@ const router = require('express').Router();
 const { auth } = require('../utils');
 
 router.get('/', controllers.origami.get);
-router.get('/:id', auth(), controllers.origami.details);
+// router.get('/:id', auth(), controllers.origami.details);
 
 router.post('/', auth(), controllers.origami.post);
 
-router.put('/:id', auth(), controllers.origami.put);
+// router.put('/:id', auth(), controllers.origami.put);
 
-router.delete('/:id', auth(), controllers.origami.delete);
+// router.delete('/:id', auth(), controllers.origami.delete);
 
 module.exports = router;

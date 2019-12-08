@@ -11,7 +11,8 @@ function Navigation({ isLogged }) {
       <Nav className="mr-auto">
         <Nav.Link href="/">Новини</Nav.Link>
         {isLogged && <Nav.Link href="/gallery"><p>Галерия</p></Nav.Link>}
-        {isLogged && <Nav.Link href="/create-recipes">Рецепти</Nav.Link>}
+        {isLogged && <Nav.Link href="/recipes">Рецепти</Nav.Link>}
+        {isLogged && <Nav.Link href="/create-posts">Админ Постове</Nav.Link>}
         {isLogged && <Nav.Link href="/orders">Поръчки</Nav.Link>}
 
         <div className="navigation-right">

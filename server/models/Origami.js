@@ -4,7 +4,14 @@ const Model = mongoose.model;
 const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const origamiSchema = new Schema({
-
+    title: {
+        type: String,
+        required: true,
+    },
+    image: {
+        type: String,
+        required: true,
+    },
     description: {
         type: String,
         required: true,
@@ -13,7 +20,6 @@ const origamiSchema = new Schema({
         type: mongoose.Schema.Types.Date,
         default: Date.now
       },
-
     author: {
         type: ObjectId,
         ref: "User"

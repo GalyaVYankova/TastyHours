@@ -30,7 +30,8 @@ class Recipes extends React.Component {
         <div className="Recipes">
           {recipes.map((recipe) =>
             <Recipe key={recipe.id}>
-              <img src={recipe.description} alt="test" />
+              <p>{recipe.title}</p>
+              <p>{recipe.image}</p>
               <p className="post-p">{recipe.description}</p>
               <a href={'/post/' + recipe._id}>{recipe._id}</a>
               <p>Author:<span> {recipe.author.username}</span></p></Recipe>)}

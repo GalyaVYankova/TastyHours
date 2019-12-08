@@ -16,21 +16,21 @@ module.exports = {
       .catch(next);
   },
 
-  details: (req, res, next) => {
-    const {_id} = req.params.id;
-   // const user = req.user;
-   if (id) {
-    models.Origami.findById(id).populate('author')
-      .then((origamies) => res.send(origamies))
-      .catch(next)
-   }
-  },
+  // details: (req, res, next) => {
+  //   const {_id} = req.params.id;
+  //  // const user = req.user;
+  //  if (id) {
+  //   models.Origami.findById(id).populate('author')
+  //     .then((origamies) => res.send(origamies))
+  //     .catch(next)
+  //  }
+  // },
 
   post: (req, res, next) => {
-    const { description } = req.body;
+    const { title = null, image = null, description = null} = req.body;
     const { _id } = req.user;
 
-    models.Origami.create({ description, author: _id })
+    models.Origami.create({ title, image, description, author: _id })
       .then((createdOrigami) => {
         return Promise.all([
           models.User.updateOne({ _id }, { $push: { posts: createdOrigami } }),
@@ -43,18 +43,18 @@ module.exports = {
       .catch(next);
   },
 
-  put: (req, res, next) => {
-    const id = req.params.id;
-    const { description } = req.body;
-    models.Origami.updateOne({ _id: id }, { description })
-      .then((updatedOrigami) => res.send(updatedOrigami))
-      .catch(next)
-  },
+  // put: (req, res, next) => {
+  //   const id = req.params.id;
+  //   const { description } = req.body;
+  //   models.Origami.updateOne({ _id: id }, { description })
+  //     .then((updatedOrigami) => res.send(updatedOrigami))
+  //     .catch(next)
+  // },
 
-  delete: (req, res, next) => {
-    const id = req.params.id;
-    models.Origami.deleteOne({ _id: id })
-      .then((removedOrigami) => res.send(removedOrigami))
-      .catch(next)
-  }
+  // delete: (req, res, next) => {
+  //   const id = req.params.id;
+  //   models.Origami.deleteOne({ _id: id })
+  //     .then((removedOrigami) => res.send(removedOrigami))
+  //     .catch(next)
+  // }
 };

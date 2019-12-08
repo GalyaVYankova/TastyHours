@@ -33,7 +33,8 @@ class Posts extends React.Component {
         <div className="Posts">
           {posts.map((post) =>
             <Post key={post.id}>
-              <img src={post.description} alt="test" />
+              <p>{post.title}</p>
+              <p>{post.image}</p>
               <p className="post-p">{post.description}</p>
               <a href={'/post/' + post._id}>{post._id}</a>
               <p>Author:<span> {post.author.username}</span></p></Post>)}

@@ -1,6 +1,6 @@
 const recipeService = {
-  load: function (id, limit) {
-    return fetch(`http://localhost:9999/api/recipe`).then(res => res.json());
+  load: function () {
+    return fetch(`http://localhost:9999/api/recipe/`).then(res => res.json());
   },
   create: function(data) {
     return fetch(`http://localhost:9999/api/recipe/`, {
