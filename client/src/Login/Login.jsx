@@ -51,7 +51,7 @@ class Login extends React.Component {
         </p>
       </div>
       <div>
-        <button type="button" onClick={this.submitHandler}>Вход</button>
+      <Button className="gallery-button" variant="primary" onClick={this.submitHandler}>Вход</Button>
       </div>
     </form>;
   }

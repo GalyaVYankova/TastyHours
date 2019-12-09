@@ -14,8 +14,15 @@
 
 .picture-image > .card{
     height: 300px;
+    font-style: italic;
+    font-weight: 600;
 }
 
 .picture-text > img{
     margin-top: 20px;
+}
+
+.gallery-button {
+    margin: 30px;
+    background: #7A2030;
 }

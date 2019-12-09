@@ -5,3 +5,20 @@
     margin-top: 30px;
     margin-bottom: 30px;
 }
+
+.detailed-p {
+    font-weight: 500;
+    margin: auto!important;
+    width: 80%!important;
+    height: auto!important;
+    white-space: normal!important;
+    overflow: visible!important;
+    text-align: center!important;
+    margin-top: 25px!important;
+
+}
+
+#root > div > div.Container > div > div > div > div > div > p > a{
+    font-size: 20px;
+    font-style: italic;
+}

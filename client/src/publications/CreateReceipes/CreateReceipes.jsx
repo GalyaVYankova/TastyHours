@@ -2,6 +2,7 @@ import React from 'react';
 import Recipes from '../Recipes/Recipes';
 import recipeService from '../../services/recipe-service';
 import './CreateReceipes.css';
+import { Button, Col, Image, Row, Card, Form, Carousel } from 'react-bootstrap';
 
 const CreateRecipes = ({ isLogged, history }) => {
     const titleRef = React.useRef();
@@ -20,20 +21,34 @@ const CreateRecipes = ({ isLogged, history }) => {
     }, [titleRef, imageRef, descriptionRef, history]);
 
     return <div className="recipes">
-        <h3>Сподели Своята Рецепта</h3>
-        <form>
+        <form className="recipe-form">
+        <h4>Сподели Своята Рецепта</h4>
             <div>
-                <input type="text" ref={titleRef} required></input>
+                <p>
+                    <label for="recipe-title">Заглавие:</label>
+                </p>
+                <p>
+                    <input id="recipe-title" type="text" ref={titleRef} required></input>
+                </p>
             </div>
             <div>
-                <input type="text" ref={imageRef} required></input>
+                <p>
+                    <label for="recipe-text">Съставки:</label>
+                </p>
+                <p>
+                    <textarea id="recipe-text" type="text" ref={imageRef} required></textarea>
+                </p>
             </div>
             <div>
-                <textarea ref={descriptionRef} required></textarea>
+                <p>
+                    <label for="recipe-description">Начин на приготвяне:</label>
+                </p>
+                <p>
+                    <textarea id="recipe-description" ref={descriptionRef} required></textarea>
+                </p>
             </div>
-            <button type="button" onClick={createRecipes}>Напиши Рецепта</button>
+            <Button className="gallery-button" variant="primary" onClick={createRecipes}>Публикувай</Button>
         </form>
-        <Recipes limit={5} />
     </div>;
 }
 

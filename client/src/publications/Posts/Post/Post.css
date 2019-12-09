@@ -2,7 +2,7 @@
   margin: auto;
   text-align: center;
   width: 340px;
-  height: 520px;
+  height: 650px;
   margin: 20px;
 }
 
@@ -22,7 +22,13 @@ p.card-text > img{
 p.card-text > a,
 p.card-text > p{
   font-size: 18px;
-  margin: 10px 5px;
+  width: 300px;
+  height: 110px;;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .card-body {

@@ -7,6 +7,7 @@ import Logout from '../Logout/Logout';
 import Detail from '../publications/Detail/Detail';
 import CreatePost from '../publications/CreatePost/CreatePost';
 import CreateReceipes from '../publications/CreateReceipes/CreateReceipes';
+import Recipes from '../publications/Recipes/Recipes'
 import Footer from '../Footer/Footer';
 import Loader from './Loader/Loader';
 // import Profile from '../Profile/Profile';
@@ -85,7 +86,8 @@ class App extends React.Component {
               <Route path="/gallery" render={render('Home', Home, { isLogged })} />
               <Route path="/post/:id" render={render('Post', Detail, { isLogged })} />
               <Route path="/logout" render={render('Logout', Logout, { isLogged, logout: this.logout })} />
-              <Route path="/recipes" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
+              <Route path="/recipes" render={render('Recipes', Recipes, { isLogged })} />
+              <Route path="/create-recipes" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
               <Route path="/create-posts" render={render('CreatePosts', CreatePost, { isLogged })} />
               {isLogged && <Route path="/profile">
                   <React.Suspense fallback={<Loader isLoading={true} />}>

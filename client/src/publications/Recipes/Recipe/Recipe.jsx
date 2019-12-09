@@ -5,17 +5,7 @@ import { Card, Navbar, Button } from 'react-bootstrap';
 
 function Recipe({ imageUrl, imageAlt, children }) {
 
-  return <div>
-    <Card>
-      <Card.Img variant="top" src="holder.js/100px180" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-        {children}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  </div>;
+  return<div>{children}</div>;
 };
 
 export default Recipe;

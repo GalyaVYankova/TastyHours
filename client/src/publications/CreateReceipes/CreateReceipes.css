@@ -1,3 +1,61 @@
+.recipes{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
 .CreateRecipes > h3 {
     text-align: center;
+    margin: auto;
+}
+
+.recipe-form{
+    width: 60%;
+    background: url('../../istockphoto-1036645034-1024x1024.jpg') repeat center;
+    border: 5px groove #7A2030;
+    border-radius: 20px;
+    margin: auto;
+    text-align: left;
+}
+
+.recipe-form > h4{
+    font-size: 34px;
+    color: #7A2030;
+    text-align: center;
+    padding-top: 15px;
+    text-decoration: underline;
+}
+
+.recipe-form > div {
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #7A2030;
+}
+
+.recipe-form > div > p{
+    margin-bottom: 0;
+}
+
+.recipe-form > div > p > label{
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+#recipe-text,
+#recipe-description{
+    height: 120px;
+    width: 90%;
+}
+
+#recipe-title {
+    width: 90%;
+}
+
+.recipe-form > div > p > input{
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+.recipe-form > div > p > textarea{
+    font-size: 22px;
+    margin-bottom: 10px;
 }

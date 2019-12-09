@@ -1,0 +1,52 @@
+.Recipes {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: auto;
+    padding-left: 40px;
+}
+
+.Recipes > div {
+    margin: 15px;
+    width: 45%;
+}
+
+.Recipes > div > .recipe-body{
+    background: url('../../pattern-1084046_1920.jpg') repeat center;
+    border: 5px groove #7A2030;
+    border-radius: 20px;
+    background: white;
+    height: 440px;
+    text-align: left;
+}
+
+.recipe-body > p {
+    margin-bottom: 0;
+    margin-left: 35px;
+    margin-right: 20px;
+}
+
+.recipe-body > h4{
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 25px;
+    padding-top: 6px;
+}
+
+.recipe-body > .recipe-title{
+    text-decoration: underline;
+    font-size: 24px;
+}
+
+.recipe-body > .recipe-description{
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.recipe-author{
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 10px;
+    text-align: right;
+}

@@ -29,12 +29,14 @@ class Recipes extends React.Component {
       {recipes ?
         <div className="Recipes">
           {recipes.map((recipe) =>
-            <Recipe key={recipe.id}>
-              <p>{recipe.title}</p>
-              <p>{recipe.image}</p>
-              <p className="post-p">{recipe.description}</p>
-              <a href={'/post/' + recipe._id}>{recipe._id}</a>
-              <p>Author:<span> {recipe.author.username}</span></p></Recipe>)}
+            <Recipe key={recipe.id} className="recipe-card">
+              <div className="recipe-body">
+              <h4>~~{recipe.title}~~</h4>
+              <p className="recipe-title">Съставки:</p> 
+              <p className="recipe-description">{recipe.image}</p>
+              <p className="recipe-title">Начин на приготвяне:</p> 
+              <p className="recipe-description">{recipe.description}</p>
+              <p className="recipe-author">Автор:<span> {recipe.author.username}</span></p></div></Recipe>)}
         </div> : <div>Loading...</div>
       }
     </div>

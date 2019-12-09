@@ -45,9 +45,8 @@ class Gallery extends React.Component {
     };
 
     return <div className="createPicture">
-      <button id="upload_widget" className="cloudinary-button" onClick={() =>
-        myWidget.open()}>Upload files</button>
-      <button className="cloudinary-button" onClick={refreshGallery}>Refresh Gallery</button>
+         <Button className="gallery-button" variant="primary" onClick={() => myWidget.open()}>Качи снимка</Button>
+         <Button className="gallery-button" variant="primary" onClick={refreshGallery}>Презареди</Button>
       {pictures ?
         <div className="Pictures">
           {pictures.map((picture) =>

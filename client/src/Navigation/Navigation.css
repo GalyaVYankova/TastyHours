@@ -5,8 +5,27 @@ nav > a.navbar-brand > p {
   font-weight: 700;
 }
 
-.navbar-dark .navbar-nav .nav-link {
-  color: #0043ff!important;
+.nav-link,
+.navigation-right {
   font-weight: 700;
+  font-size: 30px;
+  
 }
 
+#root > div > div:nth-child(1) > nav > a.navbar-brand{
+  
+}
+
+.navigation-right > a.nav-link,
+nav > a.nav-link {
+  padding: 0 20px!important;
+}
+
+#root > div > div:nth-child(1) > nav{
+  padding-bottom: 0;
+  padding-top: 20px;
+}
+
+.nav-label {
+  font-size: 20px;
+}

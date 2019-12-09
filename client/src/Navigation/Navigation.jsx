@@ -7,20 +7,16 @@ import { Nav, Navbar } from 'react-bootstrap'
 function Navigation({ isLogged }) {
   return <div>
     <Navbar className="pink" variant="dark">
-      <Navbar.Brand href="/"><p>Tasty</p> <p>Hours</p></Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href="/">Новини</Nav.Link>
-        {isLogged && <Nav.Link href="/gallery"><p>Галерия</p></Nav.Link>}
-        {isLogged && <Nav.Link href="/recipes">Рецепти</Nav.Link>}
-        {isLogged && <Nav.Link href="/create-posts">Админ Постове</Nav.Link>}
-        {isLogged && <Nav.Link href="/orders">Поръчки</Nav.Link>}
-
+          <Nav.Link href="/"><div className="nav-label">Tasty</div> <div className="nav-label">Hours</div></Nav.Link>
+          <Nav.Link href="/"><p>Новини</p></Nav.Link>
+          {isLogged && <Nav.Link href="/gallery"><p>Галерия</p></Nav.Link>}
+          {isLogged && <Nav.Link href="/recipes"><p>Рецепти</p></Nav.Link>}
+          {isLogged && <Nav.Link href="/create-recipes"><p>Публикувай</p></Nav.Link>}
         <div className="navigation-right">
-          {!isLogged && <Nav.Link href="/register">Регистрация</Nav.Link>}
-          {!isLogged && <Nav.Link href="/login">Вход</Nav.Link>}
-          {isLogged && <Nav.Link href="/logout">Изход</Nav.Link>}
+          {!isLogged && <Nav.Link href="/register"><p>Регистрация</p></Nav.Link>}
+          {!isLogged && <Nav.Link href="/login"><p>Вход</p></Nav.Link>}
+          {isLogged && <Nav.Link href="/logout"><p>Изход</p></Nav.Link>}
         </div>
-      </Nav>
     </Navbar>
   </div>
 };

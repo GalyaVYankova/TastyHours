@@ -9,7 +9,13 @@
 }
 
 .Details {
-    background: url('../stretched-1280-1024-887662.jpg') repeat center;
+    background: url('../unsplash2.jpg') repeat center;
+    padding-top: 0.1px;
+    padding-bottom: 0.1px;
+}
+
+.Recipes{
+    background: url('../backgroundR1.jpg') repeat center;
     padding-top: 0.1px;
     padding-bottom: 0.1px;
 }

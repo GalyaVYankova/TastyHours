@@ -5,10 +5,12 @@ const { String, Number, Boolean, ObjectId } = Schema.Types;
 
 const recipeSchema = new Schema({
     title: {
-        type: String
+        type: String,
+        required: true
     },
     image: {
-        type: String
+        type: String,
+        required: true
     },
     description: {
         type: String,

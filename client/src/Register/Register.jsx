@@ -55,7 +55,7 @@ class Register extends React.Component {
           </p>
         </div>
         <div >
-          <button type="button" onClick={this.submitHandler}>Регистрация</button>
+        <Button className="gallery-button" variant="primary" onClick={this.submitHandler}>Регистрация</Button>
         </div>
       </form>);
   }
