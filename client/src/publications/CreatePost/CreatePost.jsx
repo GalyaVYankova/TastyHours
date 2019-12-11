@@ -27,7 +27,7 @@ const CreatePost = ({ isLogged, history }) => {
                 <textarea ref={descriptionRef} required />
             </div>
             <div>
-                <button type="button" onClick={createPost}>Create Post</button>
+                <button type="button" onClick={createPost}>Публикувай</button>
             </div>
         </form>
         <Posts limit={5} />

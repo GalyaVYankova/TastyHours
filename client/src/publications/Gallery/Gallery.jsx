@@ -52,7 +52,7 @@ class Gallery extends React.Component {
           {pictures.map((picture) =>
             <Picture key={picture.id}>
               <img src={picture.url} alt="test" />
-              <p>Author:<span> {picture.author.username}</span></p></Picture>)}
+              <p>Автор:<span> {picture.author.username}</span></p></Picture>)}
         </div> : <div>Loading...</div>
       }
 
