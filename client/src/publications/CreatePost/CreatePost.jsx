@@ -2,6 +2,7 @@ import React from 'react';
 import Posts from '../Posts/Posts';
 import postService from '../../services/post-service';
 import './CreatePost.css';
+import { Button, Col, Image, Row, Card, Form, Carousel } from 'react-bootstrap';
 
 const CreatePost = ({ isLogged, history }) => {
     const titleRef = React.useRef();
@@ -16,21 +17,35 @@ const CreatePost = ({ isLogged, history }) => {
     }, [titleRef, imageRef, descriptionRef, history]);
 
     return <div className="CreatePost">
-        <form>
+        <form className="recipe-form">
             <div>
-                <input ref={titleRef} type="text" required />
+                <p>
+                    <label for="post-title">Заглавие:</label>
+                </p>
+                <p>
+                    <input id="post-title" ref={titleRef} type="text" required />
+                </p>
             </div>
             <div>
-                <input ref={imageRef} type="text" required />
+                <p>
+                    <label for="post-image">Снимка:</label>
+                </p>
+                <p>
+                    <input id="post-image" ref={imageRef} type="text" required />
+                </p>
             </div>
             <div>
-                <textarea ref={descriptionRef} required />
+                <p>
+                    <label for="post-description">Описание:</label>
+                </p>
+                <p>
+                    <textarea id="post-description" ref={descriptionRef} required />
+                </p>
             </div>
             <div>
-                <button type="button" onClick={createPost}>Публикувай</button>
+            <Button className="gallery-button" variant="primary" onClick={createPost}>Публикувай</Button>    
             </div>
         </form>
-        <Posts limit={5} />
     </div>;
 }
 

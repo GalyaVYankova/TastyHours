@@ -1,3 +1,11 @@
 .CreatePost > form {
   text-align: center;
+  margin-top: 95px;
+  margin-bottom: 100px;
 }    
+
+#post-description,
+#post-image,
+#post-title{
+  width: 80%;
+}

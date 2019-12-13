@@ -13,7 +13,7 @@
 }
 
 .picture-image > .card{
-    height: 300px;
+    height: 320px;
     font-style: italic;
     font-weight: 600;
 }
@@ -25,4 +25,8 @@
 .gallery-button {
     margin: 30px;
     background: #7A2030;
+}
+
+.picture-image > .card > div > p > img{
+    height: 240px;
 }

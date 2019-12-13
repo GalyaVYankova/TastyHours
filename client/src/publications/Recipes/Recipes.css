@@ -16,7 +16,7 @@
     border: 5px groove #7A2030;
     border-radius: 20px;
     background: white;
-    height: 440px;
+    height: 500px;
     text-align: left;
 }
 
@@ -39,7 +39,7 @@
 }
 
 .recipe-body > .recipe-description{
-    font-size: 18px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
