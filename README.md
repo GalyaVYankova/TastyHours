@@ -1,3 +1,6 @@
+This project is a blog for cooking recipes and news. Express, Node.js and MongoDB are used for the server side and React is used for the client side. The site has a public part that includes summaries of publications and also a button to the full texts of the publications. It also contains the Login and Register pages. The private part adds the gallery page where registered users may upload images from their computer or from other web addresses or capture own picture at real time. Cloudinary is used for the upload and storage functionalities of the gallery. There is a place where registered users may publish their own recipes and read all recipes.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
