@@ -19,8 +19,6 @@ import userService from '../services/user-service';
 import Home from '../publications/Gallery/Gallery';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const Profile = React.lazy(() => import('../Profile/Profile'));
-
 function render(title, Cmp, otherProps) {
   return function (props) {
     return <Cmp {...props} {...otherProps} />
@@ -64,7 +62,7 @@ class App extends React.Component {
         this.setState({ isLogged: true });
         history.push('/');
       } else {
-        alert ('No such user or password!')
+        alert ('Няма такъв потребител или парола!')
         // did not login due to wrong user and/or password or another reason
         // console.log(res);
       }
@@ -89,11 +87,6 @@ class App extends React.Component {
               <Route path="/recipes" render={render('Recipes', Recipes, { isLogged })} />
               <Route path="/create-recipes" render={render('CreateReceipes', CreateReceipes, { isLogged })} />
               <Route path="/create-posts" render={render('CreatePosts', CreatePost, { isLogged })} />
-              {isLogged && <Route path="/profile">
-                  <React.Suspense fallback={<Loader isLoading={true} />}>
-                    <Profile></Profile>
-                  </React.Suspense>
-              </Route>}
             </Switch>
           </div>
           <div className="auth">

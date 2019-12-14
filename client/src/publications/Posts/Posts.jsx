@@ -38,7 +38,7 @@ class Posts extends React.Component {
               <p className="post-p">{post.description}</p>
               <div className="post-link">
               <a href={'/post/' + post._id}>Продължава...</a></div></Post>)}
-        </div> : <div>Loading...</div>
+        </div> : <div className="loader">Зареждане...</div>
       }
     </div>
   }

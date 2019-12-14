@@ -53,7 +53,7 @@ class Gallery extends React.Component {
             <Picture key={picture.id}>
               <img class="gallery-image" src={picture.url} alt="test" />
               <p>Автор:<span> {picture.author.username}</span></p></Picture>)}
-        </div> : <div>Loading...</div>
+        </div> : <div className="loader">Зареждане...</div>
       }
 
 

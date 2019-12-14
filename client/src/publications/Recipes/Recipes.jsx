@@ -37,7 +37,7 @@ class Recipes extends React.Component {
               <p className="recipe-title">Начин на приготвяне:</p> 
               <p className="recipe-description">{recipe.description}</p>
               <p className="recipe-author">Автор:<span> {recipe.author.username}</span></p></div></Recipe>)}
-        </div> : <div>Loading...</div>
+        </div> : <div className="loader">Зареждане...</div>
       }
     </div>
   }

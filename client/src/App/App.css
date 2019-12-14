@@ -19,3 +19,11 @@
     padding-top: 0.1px;
     padding-bottom: 0.1px;
 }
+
+.className,
+.loader{
+    background: url('../pattern-3371709_1920.jpg') repeat center;
+    font-size: 34px;
+    text-align: center;
+    margin-top: 50px;
+}

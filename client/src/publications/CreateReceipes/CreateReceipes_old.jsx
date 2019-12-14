@@ -8,41 +8,27 @@ const CreateRecipes = ({ isLogged, history }) => {
     const titleRef = React.useRef();
     const imageRef = React.useRef();
     const descriptionRef = React.useRef();
-    const titleError = (titleRef.current && titleRef.current.value.length == 0) ? true : false;
-    const imageError = (imageRef.current && imageRef.current.value.length == 0) ? true : false;
-    const descriptionError = (descriptionRef.current && descriptionRef.current.value.length == 0) ? true : false;
-
     const createRecipes = React.useCallback(() => {
-        let title = titleRef.current.value;
-        let image = imageRef.current.value;
-        let description = descriptionRef.current.value;
-        if (title.length > 0 && image.length > 0 && description.length > 0) {
-            recipeService.create({
-                title: title,
-                image: image,
-                description: description
-            })
-                .then(() => {
-                    history.push('/');
-                    history.push('/recipes');
-                });
-        } else {
-            // validation failed handling
-            // refresh same page
-            history.push('/create-recipes');
-        }
+        recipeService.create({
+            title: titleRef.current.value,
+            image: imageRef.current.value,
+            description: descriptionRef.current.value
+        })
+            .then(() => {
+                history.push('/');
+                history.push('/recipes');
+            });
     }, [titleRef, imageRef, descriptionRef, history]);
 
     return <div className="recipes">
         <form className="recipe-form">
-            <h4>Сподели Своята Рецепта</h4>
+        <h4>Сподели Своята Рецепта</h4>
             <div>
                 <p>
                     <label for="recipe-title">Заглавие:</label>
                 </p>
                 <p>
-                    <input id="recipe-title" type="text" ref={titleRef} required />
-                    {titleError ? <div className="error">Заглавието е задължително</div> : ''}
+                    <input id="recipe-title" type="text" ref={titleRef} required minlength="1" maxlength="100"></input>
                 </p>
             </div>
             <div>
@@ -51,7 +37,6 @@ const CreateRecipes = ({ isLogged, history }) => {
                 </p>
                 <p>
                     <textarea id="recipe-text" type="text" ref={imageRef} required></textarea>
-                    {imageError ? <div className="error">Необходими са съставки</div> : ''}
                 </p>
             </div>
             <div>
@@ -60,7 +45,6 @@ const CreateRecipes = ({ isLogged, history }) => {
                 </p>
                 <p>
                     <textarea id="recipe-description" ref={descriptionRef} required></textarea>
-                    {descriptionError ? <div className="error">Необходим е начин на приготвяне</div> : ''}
                 </p>
             </div>
             <Button className="gallery-button" variant="primary" onClick={createRecipes}>Публикувай</Button>
